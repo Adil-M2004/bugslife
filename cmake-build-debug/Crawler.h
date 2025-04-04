@@ -29,6 +29,21 @@ class Crawler {
   public:
     Crawler();
 
+     public:
+    int id;
+    Position position;
+    Direction direction;
+    int size;
+    bool alive;
+    std::list<Position> path;
+
+    Crawler(int id, Position startPos, Direction startDir, int initialSize);
+
+    void move(int boardWidth, int boardHeight);
+    bool isWayBlocked(int boardWidth, int boardHeight);
+
+private:
+    Direction getRandomDirection();
 
 };
 
